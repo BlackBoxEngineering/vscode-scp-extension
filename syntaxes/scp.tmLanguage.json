@@ -38,19 +38,32 @@
     },
     {
       "include": "#expressions"
+    },
+    {
+      "include": "#externalapi"
     }
+    
   ],
   "repository": {
     "string": {
       "name": "string.quoted.double.scp",
       "begin": "\"",
-      "end": "\"",
+      "end": "(?<!\\\\)\"",
       "patterns": [
         {
           "name": "constant.character.escape.scp",
-          "match": "\\\\.*"
+          "match": "\\\\[\"'\\\\bfnrtv]"
         }
       ]
+    },
+    "externalapi": {
+      "name": "meta.command.exec.curl.scp",
+      "match": "(?i)\\bexec\\s+curl\\b.*",
+      "captures": {
+        "0": {
+          "name": "string.unquoted.commandline.scp"
+        }
+      }
     },
     "identifier-reserved": {
       "name": "entity.name.reserved.scp",
