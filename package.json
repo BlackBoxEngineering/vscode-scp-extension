@@ -20,14 +20,8 @@
     "languages": [
       {
         "id": "scp",
-        "aliases": [
-          "SphereScript",
-          "SphereScript-X",
-          "scp"
-        ],
-        "extensions": [
-          ".scp"
-        ],
+        "aliases": ["SCP Script"],
+        "extensions": [".scp"],
         "configuration": "./language-configuration.json"
       }
     ],
